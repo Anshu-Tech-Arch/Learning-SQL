@@ -33,5 +33,12 @@ create table student(
 );
 insert into student(id, name, age, grade, D_0_B) 
 values (1, 'Rohan', 34, '10th', '1999-02-13');	
-ALTER TABLE STUDENT RENAME COLUMN D_0_B TO D_O_B;
+ALTER TABLE STUDENT RENAME COLUMN D_0_B TO D_O_B; 
+
+insert into student(id, name, age, grade, D_O_B) VALUES
+(2, 'Ansh', 24, '10th', '2009-12-5'),
+(3, 'Aditya', 12, '10th','2009-5-17'),
+(4, 'Aman', 26, '12th', '2000-12-4');
 select * from student;
+
+ 
