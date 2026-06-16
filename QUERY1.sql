@@ -22,3 +22,16 @@ alter table students drop column adm_dt;
 alter table students add column is_passed Bool default True;
 alter table students modify column name varchar(50) default ('');
 alter table students modify column name varchar(50) after is_passed;
+create database schooldb;
+use schooldb;
+create table student(
+	id int primary key,
+    name varchar(100),
+    age int,
+    grade varchar(10),
+    D_0_B date
+);
+insert into student(id, name, age, grade, D_0_B) 
+values (1, 'Rohan', 34, '10th', '1999-02-13');	
+ALTER TABLE STUDENT RENAME COLUMN D_0_B TO D_O_B;
+select * from student;
