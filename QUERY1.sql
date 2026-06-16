@@ -19,4 +19,6 @@ rename table studens1 to students;
 alter table students rename column admission_date to adm_dt;
 describe students;
 alter table students drop column adm_dt;
-alter table students add column is_passed Bool deafult True; 
+alter table students add column is_passed Bool default True;
+alter table students modify column name varchar(50) default ('');
+alter table students modify column name varchar(50) after is_passed;
