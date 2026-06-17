@@ -39,6 +39,8 @@ insert into student(id, name, age, grade, D_O_B) VALUES
 (2, 'Ansh', 24, '10th', '2009-12-5'),
 (3, 'Aditya', 12, '10th','2009-5-17'),
 (4, 'Aman', 26, '12th', '2000-12-4');
-select * from student;
+	
+use schooldb;
+
 
  
