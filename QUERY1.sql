@@ -41,6 +41,10 @@ insert into student(id, name, age, grade, D_O_B) VALUES
 (4, 'Aman', 26, '12th', '2000-12-4');
 	
 use schooldb;
+select * from student;
+select * from student where age > 12;
+
+
 
 
  
