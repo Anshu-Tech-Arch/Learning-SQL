@@ -1,65 +1,18 @@
--- Drop and create the database
-DROP DATABASE IF EXISTS harryjoins;
-CREATE DATABASE harryjoins;
-USE harryjoins;
-
--- Create students table
-CREATE TABLE students (
-    id INT PRIMARY KEY,
-    name VARCHAR(50)
+create table employees(
+	employee_id int primary key,
+    first_name varchar(50),
+    last_name varchar(50),
+    department varchar(50),
+    hire_date date,
+    salary decimal(10,2),
+    is_active boolean
 );
 
--- Insert students
-INSERT INTO students (id, name) VALUES
-(1, 'Rohan'),
-(2, 'Aakash'),
-(3, 'Priya'),
-(4, 'Sneha'),
-(5, 'Rahul'),
-(6, 'Anjali'),
-(7, 'Vikram'),
-(8, 'Simran'),
-(9, 'Karan'),
-(10, 'Neha'),
-(11, 'Harry'),
-(12, 'Lakshayraj Dash'),
-(13, 'Ishita'),
-(14, 'Amit'),
-(15, 'Meena');
-
--- Create marks table
-CREATE TABLE marks (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    student_id INT,
-    subject VARCHAR(30),
-    score INT,
-    FOREIGN KEY (student_id) REFERENCES students(id)
-);
-
--- Insert marks
-INSERT INTO marks (student_id, subject, score) VALUES
-(1, 'Math', 92),
-(1, 'Science', 88),
-(2, 'Math', 81),
-(2, 'English', 79),
-(3, 'Math', 75),
-(3, 'Science', 73),
-(4, 'Science', 85),
-(5, 'English', 78),
-(5, 'Math', 80),
-(6, 'Science', 66),
-(6, 'English', 68),
-(7, 'Math', 55),
-(8, 'English', 74),
-(10, 'Science', 89),
-(10, 'Math', 83),
-(12, 'Math', 77),
-(12, 'Science', 79),
-(13, 'English', 60),
-(14, 'Science', 69),
-(14, 'English', 72);
-
-select * from marks; 
-
-select students.name, marks.subject, marks.score from students cross join marks;
-select * from students cross join marks;
+insert into employees(employee_id, first_name, last_name, department, hire_date, salary, is_active) values
+(1, 'Alice', 'johnson', 'Engineering', '2020-03-15', 75000, true),
+(2, 'Bob', 'Smith', 'Marketing', '2019-07-01', 68000, true),
+(3, 'Charlie', 'Davis', 'Finance', '2021-01-20', 72000, true),
+(4, 'Dana', 'Lee', 'Human Resources', '2018-11-05', 66000, false);
+use harryjoins;
+select concat(first_name,' ', last_name) as name from employees;
+select first_name, length(first_name) from employees;
