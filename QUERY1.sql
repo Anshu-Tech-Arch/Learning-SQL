@@ -16,3 +16,7 @@ insert into employees(employee_id, first_name, last_name, department, hire_date,
 use harryjoins;
 select concat(first_name,' ', last_name) as name from employees;
 select first_name, length(first_name) from employees;
+select * from employees;
+use harryjoins;
+CREATE VIEW harry as select first_name, last_name, department, salary from employees;
+select * from harry;
