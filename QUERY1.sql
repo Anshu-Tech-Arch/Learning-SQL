@@ -22,3 +22,12 @@ CREATE VIEW harry as select first_name, last_name, department, salary from emplo
 select * from employees where department='Engineering' and is_active=1;
 create index idx1 on employees(department, is_active);
 drop index idx1 on employees;
+select first_name, last_name, salary from employees
+where salary>(select avg(salary) from employees)
+;
+select first_name, last_name from employees e
+where salary>(
+select avg(salary) from employees where department = e.department
+)
+;
+select department, avg(salary) as total from employees group by department; 
