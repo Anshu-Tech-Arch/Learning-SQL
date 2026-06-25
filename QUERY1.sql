@@ -19,4 +19,6 @@ select first_name, length(first_name) from employees;
 select * from employees;
 use harryjoins;
 CREATE VIEW harry as select first_name, last_name, department, salary from employees;
-select * from harry;
+select * from employees where department='Engineering' and is_active=1;
+create index idx1 on employees(department, is_active);
+drop index idx1 on employees;
